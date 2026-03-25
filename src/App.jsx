@@ -118,33 +118,31 @@ export default function App() {
           </MagneticBtn>
         </div>
 
-        {hasImage && (
-          <>
-            <hr className="w-full border-0 border-t border-[#e8e6dc] my-9" />
-            <div className="w-full flex gap-5 justify-center flex-wrap">
-              <div className="flex-1 min-w-[260px] max-w-[420px]">
-                <div className="text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-[#b0aea5] mb-2.5">
-                  Original
-                </div>
-                <canvas
-                  ref={sourceCanvasRef}
-                  className="w-full rounded-xl border border-[#e8e6dc] block"
-                  style={{ imageRendering: 'pixelated' }}
-                />
+        <div className={hasImage ? 'w-full' : 'hidden'}>
+          <hr className="w-full border-0 border-t border-[#e8e6dc] my-9" />
+          <div className="w-full flex gap-5 justify-center flex-wrap">
+            <div className="flex-1 min-w-[260px] max-w-[420px]">
+              <div className="text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-[#b0aea5] mb-2.5">
+                Original
               </div>
-              <div className="flex-1 min-w-[260px] max-w-[420px]">
-                <div className="text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-[#b0aea5] mb-2.5">
-                  Pixel art
-                </div>
-                <canvas
-                  ref={outputCanvasRef}
-                  className="w-full rounded-xl border border-[#e8e6dc] block"
-                  style={{ imageRendering: 'pixelated' }}
-                />
-              </div>
+              <canvas
+                ref={sourceCanvasRef}
+                className="w-full rounded-xl border border-[#e8e6dc] block"
+                style={{ imageRendering: 'pixelated' }}
+              />
             </div>
-          </>
-        )}
+            <div className="flex-1 min-w-[260px] max-w-[420px]">
+              <div className="text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-[#b0aea5] mb-2.5">
+                Pixel art
+              </div>
+              <canvas
+                ref={outputCanvasRef}
+                className="w-full rounded-xl border border-[#e8e6dc] block"
+                style={{ imageRendering: 'pixelated' }}
+              />
+            </div>
+          </div>
+        </div>
 
         <canvas ref={hiddenCanvasRef} className="hidden" />
       </main>

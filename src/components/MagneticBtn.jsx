@@ -80,7 +80,7 @@ export default function MagneticBtn({
               ? 'before:opacity-100 before:scale-100 duration-150 ease-out'
               : 'before:opacity-0 before:scale-90 before:duration-300 before:ease-out before:blur-sm',
         ].join(' ')}
-        style={{ transform: `translate3D(${position.x}px, ${position.y}px, 0)` }}
+        style={{ transform: isPrimary ? undefined : `translate3D(${position.x}px, ${position.y}px, 0)` }}
       />
       {children}
     </button>
